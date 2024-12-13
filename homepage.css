@@ -1,0 +1,268 @@
+body {
+    background: -webkit-linear-gradient(25deg, #CCCCCC, #999999, #666666, #333333, #000000);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#calendar {
+    width: 50%;
+    background: #2a2a2a;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    float: right;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+}
+
+#calendar-body div {
+    background: #3a3a3a;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.animated-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: #fff; /* Set a background color */
+    border-radius: 100px;
+    font-weight: 600;
+    color: #1f387e;
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    margin-top: 20px; /* Adjust this value to move the button down */
+}
+
+.animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: #1f387e;
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+    right: 16px;
+}
+
+.animated-button .arr-2 {
+    left: -25%;
+}
+
+.animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #c5e5e4;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+    right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+    left: 16px;
+}
+
+.animated-button:hover .text {
+    transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+    fill: #1f387e;
+}
+
+.animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px rgb(53, 56, 49);
+}
+
+.animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+}
+
+#calendar-body div:hover {
+    background: #444; /* Change to desired hover background color */
+    color: #fff; /* Change to desired hover text color */
+    box-shadow: 0 0 10px #fff; /* Add a glow effect */
+    transition: all 0.3s ease;
+}
+
+.current-date {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+.assignment-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ff5555;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+#timeline-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increase gap for better spacing */
+    margin-top: 20px; /* Move the slots lower */
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #333; /* Darker border */
+    border-radius: 10px;
+    background-color: #333; /* Dark background color */
+    color: white; /* Light text color for contrast */
+}
+
+.timeline-date {
+    font-weight: bold;
+    margin-right: 20px;
+    font-size: 1.2em;
+    color: #fff; /* White text for the date label */
+}
+
+.slots-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Add some space between the slots */
+    flex-grow: 1;
+}
+
+.time-slot {
+    flex: 1;
+    min-width: 120px; /* Minimum width for each slot */
+    height: 120px; /* Increase the height of each slot */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e0f7fa;
+    font-size: 1.1em; /* Increase font size for better readability */
+    text-align: center;
+    padding: 5px; /* Padding inside each slot */
+    box-sizing: border-box;
+}
+
+.filled-slot {
+    background-color: #523F31; /* Color for filled slots */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.done-button {
+    background-color: #7D6757; /* Green background */
+    color: white; /* White text */
+    border: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.done-button:hover {
+    background-color: #2D1E17; /* Darker green on hover */
+}
+
+.empty-slot {
+    background-color: #f0f0f0; /* Light gray background for empty slot */
+    border: 1px dashed #ccc; /* Dashed border for empty slot */
+}
+
+.congrats-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50; 
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.task-block {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+.completed-slot {
+    background-color: #4CAF50; /* Green for completed */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Assignment</title>
+    <link rel="stylesheet" href="delete.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Delete Assignment</h2>
+        <label for="assignment-select">Select an assignment:</label>
+        <select id="assignment-select">
+            <option value="">--Select Assignment--</option>
+        </select>
+        <button id="delete-button">Delete</button>
+        <p id="status-message"></p>
+        <a href="/Homepage/homepage.html" class="back-button">Back to Homepage</a>
+    </div>
+
+    <!-- Firebase SDK v8 CDN scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- Custom script -->
+    <script src="delete.js"></script>
+</body>
+</html>
