@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Homepage/homepage.css">
+</head>
+<body>
+    <div id="content">
+        <h1 id="greeting">Hello, </h1>
+        <div id="calendar">
+            <div id="calendar-header">
+                <button id="prev-month">Previous</button>
+                <span id="month-year"></span>
+                <button id="next-month">Next</button>
+            </div>
+            <div id="calendar-body"></div>
+        </div>
+        <div id="timeline-container"></div> <!--timeline-->
+        <a href="/add.html" class="animated-button">
+            <span class="text">Manage your assignments</span>
+            <svg class="arr-1" viewBox="0 0 24 24">
+                <path d="M12 2L10.59 3.41 16.17 9H4V11H16.17L10.59 16.59L12 18L20 10L12 2Z"/>
+            </svg>
+            <svg class="arr-2" viewBox="0 0 24 24">
+                <path d="M12 2L10.59 3.41 16.17 9H4V11H16.17L10.59 16.59L12 18L20 10L12 2Z"/>
+            </svg>            
+            <div class="circle"></div>
+        </a>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="/Homepage/homepage.js"></script> <!--js page-->
+</body>
+</html>
